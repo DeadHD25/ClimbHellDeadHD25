@@ -5,9 +5,11 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float jump;
-    public float dash;
     public float speed;
+    public float dash;
     private Rigidbody2D rb;
+
+    
 
     bool grounded;
 
@@ -18,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     
     void Update()
     {
-        //movement
+        //horizontal movement
         Vector3 playerInput = new Vector3(Input.GetAxisRaw("Horizontal"), 0, 0);
         transform.position = transform.position + playerInput.normalized * speed * Time.deltaTime;
 
@@ -29,10 +31,12 @@ public class PlayerMovement : MonoBehaviour
         } 
 
         //dash
-        if(Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKey("left shift"))
         {
-            transform.position = transform.position + playerInput.normalized * dash * Time.deltaTime * speed;
+            rb.AddForce(new Vector2(dash, rb.velocity.y));
         }
+        
+        
     }
 
     //jump grounded check
