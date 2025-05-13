@@ -638,8 +638,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jump: 400
-  dash: 0
   speed: 5
+  dash: 5
 --- !u!50 &671892433
 Rigidbody2D:
   serializedVersion: 4
@@ -791,8 +791,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 306d53700959f394bb8c0ff8cefb4423, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 0}
-  healthAmount: 0
+  healthBar: {fileID: 563718830}
+  healthAmount: 100
 --- !u!1 &1685616179
 GameObject:
   m_ObjectHideFlags: 0
